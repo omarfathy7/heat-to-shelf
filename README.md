@@ -217,9 +217,11 @@ The demo runs entirely from cached FortyGuard responses (`cache/`) — **zero li
 
 ## Team
 
-- **AI/Data:** thermal intelligence pipeline, exposure/risk engine, evaluation
-- **Backend:** FortyGuard integration, API design, data architecture
-- **Business/Product:** research, cargo sourcing, positioning, submission materials
+| Name | Role | Responsibilities |
+| :--- | :--- | :--- |
+| **Omar** | AI/Data | Thermal intelligence pipeline, exposure/risk engine, evaluation |
+| **Abdallah** | Backend | FortyGuard integration, API design, data architecture |
+| **Hafsa** | Business/Product | Research, cargo sourcing, positioning, submission materials |
 
 ---
 
