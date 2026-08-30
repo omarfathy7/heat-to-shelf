@@ -1,0 +1,34 @@
+{
+  "study_date": "2026-08-19",
+  "origin": {
+    "lat": 37.3382,
+    "lon": -121.8863
+  },
+  "note": "anchors are real per-hour origin temps from cached heatmaps",
+  "hours": {
+    "06:00": {
+      "anchor_temp_c": 16.8,
+      "heat_index_c": 16.8,
+      "wet_bulb_c": 13.6,
+      "humidity_pct": 90.7,
+      "apparent_temp_c": 15.5,
+      "noaa_category": "SAFE"
+    },
+    "12:00": {
+      "anchor_temp_c": 26.85,
+      "heat_index_c": 26.9,
+      "wet_bulb_c": 17.7,
+      "humidity_pct": 42.9,
+      "apparent_temp_c": 28.0,
+      "noaa_category": "SAFE"
+    },
+    "16:00": {
+      "anchor_temp_c": 28.59,
+      "heat_index_c": 28.1,
+      "wet_bulb_c": 18.5,
+      "humidity_pct": 39.6,
+      "apparent_temp_c": 27.6,
+      "noaa_category": "CAUTION"
+    }
+  }
+}
