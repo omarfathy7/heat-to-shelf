@@ -1,0 +1,18 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "tile_id": "tile-sj-bad",
+        "temperature_c": 27.0,
+        "observed_at_utc": "2026-08-21T19:00:00Z",
+        "quality": 0.9
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [[-121.89, 37.34], [-121.87, 37.36]]
+      }
+    }
+  ]
+}

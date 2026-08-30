@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "tile_id": "tile-sj-001",
+        "temperature_c": 28.4,
+        "observed_at_utc": "2026-08-21T19:00:00Z",
+        "quality": 0.9
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-121.89, 37.34],
+          [-121.87, 37.34],
+          [-121.87, 37.36],
+          [-121.89, 37.36],
+          [-121.89, 37.34]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "tile_id": "tile-sj-002",
+        "temperature_c": 26.1,
+        "observed_at_utc": "2026-08-21T19:30:00Z",
+        "quality": 0.85
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [-121.89, 37.36],
+          [-121.87, 37.36],
+          [-121.87, 37.38],
+          [-121.89, 37.38],
+          [-121.89, 37.36]
+        ]]
+      }
+    }
+  ]
+}

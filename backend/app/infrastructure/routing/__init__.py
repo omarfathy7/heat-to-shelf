@@ -1,0 +1,1 @@
+from app.infrastructure.routing.provider import get_routing_provider  # noqa: F401
