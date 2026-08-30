@@ -1,0 +1,1 @@
+"""Application layer: use-case orchestration (populated in later phases)."""
