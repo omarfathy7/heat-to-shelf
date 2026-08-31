@@ -176,14 +176,15 @@ The demo runs entirely from cached FortyGuard responses (`cache/`) — **zero li
 
 **Near-term:**
 
-- Genuine forecast-backed risk for shipments departing within FortyGuard's 12-hour forecast window
+- AI agent layer: natural-language shipment input ("when should my wineshipment leave?") orchestrated over the existing deterministic engine —the LLM plans and explains, the engine computes. The architecture forthis is sketched in backend/PHASES.md (Phase 9)
+- Genuine forecast-backed risk for shipments departing within FortyGuard's12-hour forecast window
 - Route comparison (multiple candidate routes, not just multiple departure times)
 - Additional cargo categories with rigorously sourced thresholds
 - Live shipment monitoring during transit
 
 **Longer-term:**
 
-- Production FastAPI + PostgreSQL/PostGIS backend (architecture already designed — see `backend/`)
+- Production FastAPI + PostgreSQL/PostGIS deployment (fully implemented andtested — 137 tests passing, see backend/; deployment as production API)
 - Fleet-level dashboards and portfolio risk reporting
 - API product for logistics platforms to integrate thermal risk directly
 
