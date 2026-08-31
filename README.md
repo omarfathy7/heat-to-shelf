@@ -46,6 +46,7 @@ Given a cargo type, a route, and a set of candidate departure times, Heat-to-She
 
 ## Architecture
 
+```mermaid
 flowchart TD
     A[FortyGuard Temperature API<br/>Create Heatmap + Environmental Params] -->|single-hour tcm heatmap| B
     C[OSRM Route<br/>SJ → SF · 77.8 km] -->|150 samples| B
@@ -53,7 +54,7 @@ flowchart TD
     D[Thermal Observations<br/>per-segment temp · distance · ETA] --> E
     E[Risk Engine v0.1<br/>Severity + Duration<br/>+ Critical Override] --> F
     F[Streamlit UI<br/>Cargo selector · Scenario comparison<br/>Thermal map · Risk chart]
-    
+```
 
 **Why single-hour, spatially-joined tiles (not per-second lookups):** FortyGuard's finest temporal resolution is one hour. For a ~1-hour trip, this means **one heatmap call per candidate departure hour**, covering the whole corridor — the thermal variation across the journey comes from *where* each segment sits (inland vs. coastal), not from time passing during the trip itself.
 
