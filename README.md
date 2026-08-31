@@ -5,8 +5,8 @@
 
 > "A logistics route/temperature tool that protects heat-sensitive cargo and worker safety on last-mile routes" — this project is a direct response to FortyGuard's own listed Track 3 example.
 
-**Live demo:** *[add Streamlit Cloud link here]*
-**Demo video (≤3 min):** *[add link here]*
+**Live demo:** *[https://heat-to-shelf.streamlit.app/]*
+**Demo video (≤3 min):** *[https://youtu.be/FTgLWbyd-Ok]*
 
 ---
 
@@ -46,41 +46,14 @@ Given a cargo type, a route, and a set of candidate departure times, Heat-to-She
 
 ## Architecture
 
-```
-                         ┌─────────────────────────┐
-                         │   FortyGuard Temperature │
-                         │   API (Create Heatmap,   │
-                         │   Environmental Params)  │
-                         └────────────┬─────────────┘
-                                      │  single-hour tcm heatmap
-                                      │  per candidate departure hour
-                                      ▼
-   ┌──────────────┐         ┌─────────────────────┐
-   │  OSRM Route   │────────▶│  Corridor AOI +      │
-   │  (SJ → SF)    │  150    │  Spatial Join         │
-   │  77.8 km      │ samples │  (GeoPandas, "within")│
-   └──────────────┘         └──────────┬───────────┘
-                                        │ 100% match rate
-                                        ▼
-                             ┌─────────────────────┐
-                             │  Thermal Observations │
-                             │  (per-segment temp,   │
-                             │   distance, ETA)       │
-                             └──────────┬───────────┘
-                                        ▼
-                             ┌─────────────────────┐
-                             │  Risk Engine v0.1     │
-                             │  Severity + Duration  │
-                             │  + Critical Override  │
-                             └──────────┬───────────┘
-                                        ▼
-                             ┌─────────────────────┐
-                             │  Streamlit UI         │
-                             │  Cargo selector ·     │
-                             │  Scenario comparison ·│
-                             │  Thermal map & chart  │
-                             └───────────────────────┘
-```
+flowchart TD
+    A[FortyGuard Temperature API<br/>Create Heatmap + Environmental Params] -->|single-hour tcm heatmap| B
+    C[OSRM Route<br/>SJ → SF · 77.8 km] -->|150 samples| B
+    B[Corridor AOI + Spatial Join<br/>GeoPandas · within] -->|100% match rate| D
+    D[Thermal Observations<br/>per-segment temp · distance · ETA] --> E
+    E[Risk Engine v0.1<br/>Severity + Duration<br/>+ Critical Override] --> F
+    F[Streamlit UI<br/>Cargo selector · Scenario comparison<br/>Thermal map · Risk chart]
+    
 
 **Why single-hour, spatially-joined tiles (not per-second lookups):** FortyGuard's finest temporal resolution is one hour. For a ~1-hour trip, this means **one heatmap call per candidate departure hour**, covering the whole corridor — the thermal variation across the journey comes from *where* each segment sits (inland vs. coastal), not from time passing during the trip itself.
 
